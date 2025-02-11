@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lala - Confeitaria</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <!-- Font Awesome para os ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Link para o arquivo de estilos -->
+  <link rel="stylesheet" href="EstiloLinkTree.css">
+</head>
+<body>
+  <!-- Camada de fundo opcional (pode ser habilitada se necessário) -->
+  <div class="efeito-fundo"></div>
+  <!-- Container para partículas (preenchendo toda a tela e sem interferir na interação) -->
+  <div class="particulas"></div>
+  
+  <div class="container">
+    <!-- Cabeçalho com a área de perfil -->
+    <header class="profile">
+      <img src="logo.png" alt="Logo da Confeitaria Lala" class="profile-img">
+      <p class="profile-bio">A confeitaria feita para você!</p>
+    </header>
+    
+    <!-- Seção principal com os links -->
+    <main class="links">
+      <a href="#" class="link" title="Saiba mais sobre a confeitaria">
+        <i class="fas fa-heart"></i> Sobre a Confeitaria
+      </a>
+      <a href="#" class="link" title="Cardápio via Whatsapp">
+        <i class="fas fa-calendar-check"></i> Cardápio via Whatsapp
+      </a>
+    </main>
+    
+    <!-- Rodapé com os ícones sociais -->
+    <footer class="social-icons">
+      <a href="https://www.instagram.com/lala_confeitaria0805/" class="icon" data-tooltip="Instagram" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=5521999826850" class="icon" data-tooltip="WhatsApp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </footer>
+  </div>
+  
+  <!-- GSAP para animações -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+  <!-- Arquivo de scripts -->
+  <script src="LinkTree.js"></script>
+</body>
+</html>

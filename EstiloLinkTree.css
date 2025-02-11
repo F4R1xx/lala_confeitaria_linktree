@@ -1,0 +1,219 @@
+/* Importa fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dancing+Script:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lavishly+Yours&family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --azul-profundo: #c06371;
+  --dourado: #fff;
+  --sombra-ativa: 0 0 10px rgba(0, 0, 0, 0.3);
+  --velocidade-animacao: 0.5s;
+}
+
+/* Reset básico e estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--azul-profundo);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Container principal */
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Fundo opcional (atualmente oculto) */
+.efeito-fundo {
+  display: none;
+}
+
+/* Container para partículas - cobre toda a tela */
+.particulas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Estilo para cada partícula */
+.particula {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: fadeOut 1s forwards;
+}
+
+/* Animação de desaparecimento das partículas */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* Seção de perfil */
+.profile {
+  text-align: center;
+  z-index: 1;
+}
+
+.profile-img {
+  width: 200px;
+  height: auto;
+  max-height: 150px;
+  animation: flutuar 4s ease-in-out infinite;
+  transition: transform 0.3s;
+}
+
+.profile:hover .profile-img {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.profile-bio {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* Seção de links */
+.links {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 400px;
+  z-index: 1;
+}
+
+/* Estilização atualizada para os botões (links) */
+.link {
+    display: inline-block;
+    position: relative;
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 0;
+    background: linear-gradient(135deg, #ff6b81, #f06595);
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .link:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Efeito "ripple" ao clicar */
+  .link::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+    pointer-events: none;
+  }
+  
+  .link:active::after {
+    width: 200%;
+    height: 200%;
+    transition: 0s;
+  }
+/* Seção de ícones sociais */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  z-index: 1;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #fff;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  position: relative;
+}
+
+.icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 11, 26, 0.9);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.icon:hover {
+  transform: scale(1.2) rotate(15deg);
+  filter: drop-shadow(0 0 5px #0059b3);
+}
+
+.icon:hover::after {
+  opacity: 1;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 120px;
+    max-height: 120px;
+  }
+
+  .profile-bio {
+    font-size: 0.9rem;
+  }
+
+  .links {
+    max-width: 300px;
+  }
+}
