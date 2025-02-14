@@ -55,8 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-console.log(TestandoKeyName);
-console.log(TestandoKeyFloat);
-teste = TestandoKeyFloat;
-num = teste + 10;
+console.log(process.env.TestandoKeyName);
+console.log(process.env.TestandoKeyFloat);
+
+let teste = parseFloat(process.env.TestandoKeyFloat);
+let num = teste + 10;
 console.log(num);
